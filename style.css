@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+    /*background-image: linear-gradient(180deg, #5b3732 0, #4f302e 10%, #412828 20%, #2f1e20 30%, #1d1415 40%, #000000 50%, #000000 60%, #000000 70%, #000000 80%, #000000 90%, #000000 100%);*/
+    background-position: center;
+    background-repeat: no-repeat;
+    /*border: 1px solid red;*/
+    background-color: rgb(49, 47, 47);
+}
+
+
+.main{
+    /*max-width: 768px;*/
+    width: 320px;
+    /*background-image: linear-gradient(black,rgb(129, 127, 127),rgb(27, 26, 26));*/
+    background-color: white;
+    box-shadow: 1px 1px 15px black;
+    margin: 50px auto;
+    border-radius: 20px;
+    padding: 30px;
+    
+}
+
+.title{
+    color: black;
+    text-align: center;
+    margin: 20px 0;
+    height: 80px;
+}
+
+.cover{
+    width:200px;
+    height: 180px;
+    display: block;
+    margin: 5px auto;
+    border-radius: 10px;
+    border: 1px solid grey;
+    object-fit: cover;
+}
+
+.barra{
+    height: 5px;
+    background-color: grey;
+    margin: 10px 0 ;
+}
+
+.progreso{
+    height: 100%;
+    background-color: yellowgreen;
+    width: 45%;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-around;
+}
+.prev img, .play img , .sig img{
+    width: 20px;
+    background-color: none;
+}
+
+.prev,.play,.sig{
+    background-color: transparent;
+    border: 0;
+    margin: 5px 0;
+}
+
+.prev:hover,.play:hover,.sig:hover{
+    cursor: pointer;
+}
+
+.lista{
+    margin-top: 5px;
+    
+}
+
+.lista li{
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.lista a{
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+
+.lista .active{
+    color: greenyellow;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
