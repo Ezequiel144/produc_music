@@ -20,7 +20,12 @@ const lista = document.querySelector(".lista");
 const audio = document.querySelector(".audio");
 const titulo = document.querySelector(".title");
 const cover = document.querySelector(".cover");
-const play = document.querySelector(".play_img")
+const play = document.querySelector(".play_img");
+const ant = document.querySelector(".prev_img");
+const sig = document.querySelector(".sig_img");
+const prog = document.querySelector(".progreso");
+let cont = 0;
+
 // - Mostrar y cargar el listado de canciones - //
 
 function cargarsong(song1){    
@@ -43,24 +48,22 @@ function cargarsong(song1){
         a.href = "#";
         li.appendChild(a);  //<a> se agrega a <li>//
         lista.appendChild(li); //<li> se agrega a <ul>//
-        console.log(lista);
+        
         a.addEventListener("click",()=>{
-            cargardatos(i,a);
+            cargardatos(i);
+            a.classList = "active";
         }) 
     } 
 }
 
 // - Cargando datos de la canciones - //
 
-function cargardatos(pos,a){
+function cargardatos(pos){
     audio.src = "./audio/" + songlist[pos].file;
-    //audio.play();
     titulo.innerText = songlist[pos].title;
-    //a.style.fontSize = "1.2rem";
-    a.style.color = "green";
     cover.src = './imagenes/' + songlist[pos].cover;
     playsong();
-    
+    //console.log(pos);
 }
 
 // - play - // 
@@ -94,6 +97,45 @@ function pausedsong(){
     audio.pause();
     controls();
 }
+
+
+// - anterior -//
+ant.addEventListener("click",()=>{ 
+    cont--;
+    if(cont >= 0){
+        cargardatos(cont);
+        //console.log(cont);    
+    }else{
+        cont = songlist.length - 1;
+        cargardatos(cont);
+        //console.log(cont);
+    }
+    
+})
+// - siguiente -//
+
+sig.addEventListener("click",()=>{
+    cont++;
+    if(cont > songlist.length - 1){
+        cont = 0;
+        cargardatos(cont);
+        //console.log(cont);
+    }else{
+        cargardatos(cont);
+        //console.log(cont);
+    }
+})
+
+// - barra de progreso - //
+audio.addEventListener("timeupdate",barraprogres);
+
+function barraprogres(evento){
+    const {duration,currentTime} = evento.srcElement;
+    const porcentaje = (currentTime*100) / duration;
+    prog.style.width = porcentaje + "%";
+    //console.log(porcentaje);
+}
+
 // - cargando funciones - //
 cargarsong();
 
