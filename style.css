@@ -96,3 +96,8 @@ body{
     font-weight: bold;
     
 }
+
+.controls .volumen{
+    border: 1px solid red;
+    width: 100px;
+}

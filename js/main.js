@@ -24,6 +24,8 @@ const play = document.querySelector(".play_img");
 const ant = document.querySelector(".prev_img");
 const sig = document.querySelector(".sig_img");
 const prog = document.querySelector(".progreso");
+const vol = document.querySelector(".volumen");
+const barra = document.querySelector(".barra");
 let cont = 0;
 
 // - Mostrar y cargar el listado de canciones - //
@@ -51,7 +53,7 @@ function cargarsong(song1){
         
         a.addEventListener("click",()=>{
             cargardatos(i);
-            a.classList = "active";
+            //a.classList = "active";
         }) 
     } 
 }
@@ -133,8 +135,34 @@ function barraprogres(evento){
     const {duration,currentTime} = evento.srcElement;
     const porcentaje = (currentTime*100) / duration;
     prog.style.width = porcentaje + "%";
-    //console.log(porcentaje);
+    //console.log(evento);
+    
 }
+
+// - Volumen - // 
+vol.addEventListener("click",()=>{
+    let volumen = this.value;
+    audio.volume = volumen;
+})
+
+
+// - Click a la barra de progreso - //
+barra.addEventListener("click",(x)=>{
+    let areatotalbarra = barra.clientWidth; //toma el ancho total de la barra junto con su padding osea el relleno//
+    let clickejex = x.offsetX;// devuelve la coordenada donde haga click el mouse. propiedad solo de lectura //
+    let duracionsong = audio.duration; //duracion de la cancion//
+    audio.currentTime = (clickejex * duracionsong)/areatotalbarra;
+    //audio.currentTime = (clickejex/areatotalbarra)*duracionsong;
+    //playMusic();
+    /*  
+        100% ---------> duracionsong
+        ¿?% ----------> clickejex
+        100% ---------> areatotalbarra
+
+        areatotalbarra -------- duracionsong
+            clickejex  -------- X
+    */ 
+})
 
 // - cargando funciones - //
 cargarsong();
