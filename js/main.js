@@ -24,7 +24,7 @@ const play = document.querySelector(".play_img");
 const ant = document.querySelector(".prev_img");
 const sig = document.querySelector(".sig_img");
 const prog = document.querySelector(".progreso");
-const vol = document.querySelector(".volumen");
+let vol = document.querySelector(".volumen");
 const barra = document.querySelector(".barra");
 let cont = 0;
 
@@ -66,11 +66,17 @@ function cargardatos(pos){
     cover.src = './imagenes/' + songlist[pos].cover;
     playsong();
     //console.log(pos);
+    
+    if(audio.duration == audio.currentTime){
+        audio.play();
+
+    }
 }
 
 // - play - // 
 
 function controls(){
+
     if(audio.paused){
         play.src = "./imagenes/tocar.png";
     }else{
@@ -82,6 +88,7 @@ function controls(){
 // - click del control play - //
 
 play.addEventListener("click",()=>{
+    
     if(audio.paused){
         playsong();
     }else{
@@ -92,7 +99,7 @@ play.addEventListener("click",()=>{
 // - reproducir - //
 function playsong(){
     audio.play();
-    controls()
+    controls();
 }
 // - pausar - //
 function pausedsong(){
@@ -116,7 +123,9 @@ ant.addEventListener("click",()=>{
 })
 // - siguiente -//
 
-sig.addEventListener("click",()=>{
+sig.addEventListener("click",siguiente)
+
+function siguiente(){
     cont++;
     if(cont > songlist.length - 1){
         cont = 0;
@@ -126,7 +135,7 @@ sig.addEventListener("click",()=>{
         cargardatos(cont);
         //console.log(cont);
     }
-})
+}
 
 // - barra de progreso - //
 audio.addEventListener("timeupdate",barraprogres);
@@ -135,15 +144,19 @@ function barraprogres(evento){
     const {duration,currentTime} = evento.srcElement;
     const porcentaje = (currentTime*100) / duration;
     prog.style.width = porcentaje + "%";
-    //console.log(evento);
+    //console.log(audio.currentTime);
+    if(duration === currentTime){
+        siguiente();
+    }
     
 }
 
-// - Volumen - // 
-vol.addEventListener("click",()=>{
-    let volumen = this.value;
-    audio.volume = volumen;
-})
+function volchange(){
+    let volmusic = vol.value;  //usamos el metodo de poner en el doc HTML el atributo onchange para poder obetener los valores del input :)
+    
+    audio.volume = volmusic/100;
+    console.log(audio.volume);
+}
 
 
 // - Click a la barra de progreso - //
