@@ -40,7 +40,7 @@ body{
     margin: 5px auto;
     border-radius: 10px;
     border: 1px solid grey;
-    object-fit: cover;
+    object-fit: content;
 }
 
 .barra{
@@ -67,7 +67,7 @@ body{
 .controls_plays{
     margin: 0 auto;
     /* border: 1px solid blue; */
-    width: 125px;
+    width: 120px;
     display: flex;
     justify-content: space-between;
 }
@@ -101,6 +101,10 @@ body{
     color: black;
     font-weight: 300;
     font-size: 0.8rem;
+    border-left: 2px solid rgb(143, 217, 33);
+    padding: 2px;
+    width: 100%;
+    
 }
 
 .lista .active{

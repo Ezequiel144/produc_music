@@ -12,6 +12,16 @@ const songlist = [
         file: "BoyceAvenue-Mirrors-JustinTimberlake(Legendado Pt)(320 kbps).mp3",
         cover:"3.jpg"
     },
+    {
+        title: "Alejandro Lerner - Algunas Frases",
+        file: "AlejandroLerner-AlgunasFrases(Audio).mp3",
+        cover:"4.jpg"
+    },
+    {
+        title: "Cristian Castro - Lloran las Rosas",
+        file: "CristianCastro-LloranlasRosas.mp3",
+        cover:"5.jpg"
+    },
 ]
 
 
@@ -153,7 +163,6 @@ function barraprogres(evento){
 
 function volchange(){
     let volmusic = vol.value;  //usamos el metodo de poner en el doc HTML el atributo onchange para poder obetener los valores del input :)
-    
     audio.volume = volmusic/100;
     console.log(audio.volume);
 }
