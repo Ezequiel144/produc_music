@@ -57,7 +57,19 @@ body{
 
 .controls{
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
+    /* border: 1px solid red; */
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.controls_plays{
+    margin: 0 auto;
+    /* border: 1px solid blue; */
+    width: 125px;
+    display: flex;
+    justify-content: space-between;
 }
 .prev img, .play img , .sig img{
     width: 20px;
@@ -97,7 +109,27 @@ body{
     
 }
 
+.vol_content{
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: center;
+}
+
 .controls .volumen{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100px;
+}
+
+.imgvol{
+    width: 20px;
+    height: 20px;
+/*     margin-top: 7px;
+    margin-left: 20px; */
+}
+
+
+.lista_title{
+    font-size: 1rem;
+    margin: 5px 0;
+    font-weight: 700;
 }

@@ -17,19 +17,24 @@
             <section class="progreso"></section>
         </div>
         <section class="controls">
-            
-            <button class="prev">
-                <img class="prev_img" src="./imagenes/pista-anterior.png" alt="">
-            </button>
-            <button class="play">
-                <img class="play_img" src="./imagenes/tocar.png" alt="">
-            </button>
-            <button class="sig"> 
-                <img class="sig_img" src="./imagenes/siguiente-pista.png" alt="">
-            </button>
-            <input class="volumen" type="range" step="10" max="100" min="0" value="100" onchange="volchange()">
+            <div class="controls_plays">
+                <button class="prev">
+                    <img class="prev_img" src="./imagenes/pista-anterior.png" alt="">
+                </button>
+                <button class="play">
+                    <img class="play_img" src="./imagenes/tocar.png" alt="">
+                </button>
+                <button class="sig"> 
+                    <img class="sig_img" src="./imagenes/siguiente-pista.png" alt="">
+                </button>
+            </div>
+            <div class="vol_content">
+                <img class="imgvol" src="./imagenes/icons8-voice-24.png" alt="vol">
+                <input class="volumen" type="range" step="10" max="100" min="0" value="100" onchange="volchange()">
+            </div>
         </section>
         <ul class="lista" id="lista">
+            <h3 class="lista_title">Lista de canciones</h3>
             <!-- <li><a class="song1" href="#">song1</a></li>
             <li><a class="song2" href="#">song2</a></li>
             <li><a class="song3" href="#">song3</a></li> -->

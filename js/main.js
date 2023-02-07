@@ -157,7 +157,7 @@ function volchange(){
     audio.volume = volmusic/100;
     console.log(audio.volume);
 }
-
+    
 
 // - Click a la barra de progreso - //
 barra.addEventListener("click",(x)=>{
