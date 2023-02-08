@@ -1,15 +1,15 @@
 const songlist = [
     {
-        title: "Beret - Ojala",
-        file: "BERET-OJALÁ(LETRA).mp3",
+        title: "Nacha guevara - No llores por mi Argentina",
+        file: "NollorespormiArgentinaNachaguevara.mp3",
         cover:"1.jpg"
     },{
-        title: "Eminem - Love the way you lie",
-        file: "Eminem-LoveTheWayYouLieft.Rihanna-uelHwf8o7_U-MP3.mp3",
+        title: "Luis Miguel - Sueña",
+        file: "Sueña-LuisMiguel.mp3",
         cover:"2.jpg"
     },{
-        title: "Beyoce Avenue - Mirror",
-        file: "BoyceAvenue-Mirrors-JustinTimberlake(Legendado Pt)(320 kbps).mp3",
+        title: "Honrar la vida - Marilina Ross",
+        file: "honrarlavida-MarilinaRoss.mp3",
         cover:"3.jpg"
     },
     {
@@ -21,6 +21,16 @@ const songlist = [
         title: "Cristian Castro - Lloran las Rosas",
         file: "CristianCastro-LloranlasRosas.mp3",
         cover:"5.jpg"
+    },
+    {
+        title: "Sandra M. - ProhibidoProhibir",
+        file: "SandraMihanovich-ProhibidoProhibir.mp3",
+        cover:"6.jpg"
+    },
+    {
+        title: "Ricky M. - No Importa La Distancia",
+        file: "RickyMartin-NoImportaLaDistancia.mp3",
+        cover:"7.jpg"
     },
 ]
 
