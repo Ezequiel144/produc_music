@@ -32,6 +32,16 @@ const songlist = [
         file: "RickyMartin-NoImportaLaDistancia.mp3",
         cover:"7.jpg"
     },
+    {
+        title: "Shakira - Ojos Así",
+        file: "OjosAsí-Shakira.mp3",
+        cover:"8.jpg"
+    },
+    {
+        title: "Chayanne - Torero",
+        file: "Chayanne-Torero.mp3",
+        cover:"9.jpg"
+    },
 ]
 
 
